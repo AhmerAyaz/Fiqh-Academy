@@ -1,0 +1,70 @@
+﻿@model Fiqh_Academy.Areas.Admin.Models.Login
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+}
+
+
+<div class="span9">
+    <div class="content">
+        <div class="module">
+            <div class="module-head">
+                <h3>Forms</h3>
+            </div>
+            <div class="module-body">
+                <br />
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+            <div class="form-horizontal row-fluid">
+                <div class="control-group">
+                    <label class="control-label" for="First Name">First Name</label>
+                    <div class="controls">
+                        @Html.EditorFor(model => model.FName, new { htmlAttributes = new { @class = "span8", placeholder="First Name" } })
+                        @Html.ValidationMessageFor(model => model.FName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Last Name">Last Name</label>
+                    <div class="controls">
+                        @Html.EditorFor(model => model.LName, new { htmlAttributes = new { @class = "span8", placeholder="Last Name" } })
+                        @Html.ValidationMessageFor(model => model.LName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Email">Email</label>
+                    <div class="controls">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "span8", placeholder="Email" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Password">Password</label>
+                    <div class="controls">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "span8", placeholder="Password" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Confirm Password">Confirm Password</label>
+                    <div class="controls">
+                        @Html.EditorFor(model => model.CPassword, new { htmlAttributes = new { @class = "span8", placeholder="Confirm Password" } })
+                        @Html.ValidationMessageFor(model => model.CPassword, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn">Register</button>
+                    </div>
+                </div>
+            </div>
+                }
+                </div>
+        </div>
+    </div><!--/.content-->
+</div><!--/.span9-->
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

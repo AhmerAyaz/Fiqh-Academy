@@ -1,0 +1,64 @@
+﻿@model Fiqh_Academy.Models.Bayanaat
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+}
+
+
+<div class="span9">
+    <div class="content">
+        <div class="module">
+            <div class="module-head">
+                <h3>Bayaan</h3>
+            </div>
+            <div class="module-body">
+                <br />
+                @using (Html.BeginForm("Details", "Bayanaat", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+            <div class="form-horizontal row-fluid">
+                <div class="control-group">
+                    <label class="control-label" for="Speaker">Speaker</label>
+                    <div class="controls">
+                        @Html.EditorFor(model => model.Speaker, new { htmlAttributes = new { @class = "span8", placeholder = "Speaker" } })
+                        @Html.ValidationMessageFor(model => model.Speaker, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Category">Category</label>
+                    <div class="controls">
+                        @Html.EditorFor(model => model.Category, new { htmlAttributes = new { @class = "span8", placeholder = "Category" } })
+                        @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label" for="Topic">Topic</label>
+                    <div class="controls">
+                        @Html.EditorFor(model => model.Topic, new { htmlAttributes = new { @class = "span8", placeholder = "Topic" } })
+                        @Html.ValidationMessageFor(model => model.Topic, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="File">File Path</label>
+                    <div class="controls">
+                        <div class="span8">
+                            <input type="file" id="File" name="File" required />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn">Upload</button>
+                    </div>
+                </div>
+            </div>
+                }
+            </div>
+        </div>
+    </div><!--/.content-->
+</div><!--/.span9-->
+
+

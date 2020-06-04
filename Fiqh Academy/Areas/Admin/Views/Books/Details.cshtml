@@ -1,0 +1,57 @@
+﻿@model Fiqh_Academy.Models.Books
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+}
+
+<div class="span9">
+    <div class="content">
+        <div class="module">
+            <div class="module-head">
+                <h3>Add Book</h3>
+            </div>
+            <div class="module-body">
+                <br />
+                @using (Html.BeginForm("Details", "Books", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+            <div class="form-horizontal row-fluid">
+                <div class="control-group">
+                    <label class="control-label" for="Speaker">Author</label>
+                    <div class="controls">
+                        @Html.EditorFor(model => model.Speaker, new { htmlAttributes = new { @class = "span8", placeholder = "Author" } })
+                        @Html.ValidationMessageFor(model => model.Speaker, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label" for="Category">Category</label>
+                    <div class="controls">
+                        @Html.EditorFor(model => model.Category, new { htmlAttributes = new { @class = "span8", placeholder = "Category" } })
+                        @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="File">File Path</label>
+                    <div class="controls">
+                        <div class="span8">
+                            <input type="file" id="Files" name="Files" required />
+                            <p>@ViewBag.FileStatus</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn">Upload</button>
+                    </div>
+                </div>
+            </div>
+                }
+            </div>
+        </div>
+    </div><!--/.content-->
+</div><!--/.span9-->
