@@ -67,19 +67,13 @@
                                 <li><a href="blog-single.html">Blog Single</a></li>
                             </ul>
                         </li>-->
-                        <li class="menu-has-children">
+                        <li>
                             @Html.ActionLink("Bayanaat", "Index", "Bayan")
-                            <ul>
-                                <li><a href="blog-home.html">Blog Home</a></li>
-                                <li><a href="blog-single.html">Blog Single</a></li>
-                            </ul>
+
                         </li>
-                        <li class="menu-has-children">
+                        <li>
                             @Html.ActionLink("Books & Maqalaat", "Index", "Book")
-                            <ul>
-                                <li><a href="blog-home.html">Blog Home</a></li>
-                                <li><a href="blog-single.html">Blog Single</a></li>
-                            </ul>
+
                         </li>
                         <!--<li>Html.ActionLink("Fatawa", "Index", "Fatawa")</li>-->
                         <!--<li class="menu-has-children">
@@ -89,18 +83,15 @@
                                 <li><a href="blog-single.html">Blog Single</a></li>
                             </ul>
                         </li>-->
-                        <li class="menu-has-children">
+                        <li>
                             @Html.ActionLink("Courses", "Index", "Courses")
                             <ul>
                                 <li><a href="/courses/shahadah">Shahadah-Dirasia</a></li>
                                 <li><a href="/courses/taleem">Taleem-ul-Islam</a></li>
                                 <li><a href="/courses/lisan">Lisan-ul-Quran</a></li>
-                                <li class="menu-has-children">
+                                <li>
                                     <a href="/Registration/Create">Course Registration</a>
-                                    <ul>
-                                        <li><a href="/Registration/Create">Onsite</a></li>
-                                        <li><a href="/Registration/Create">Online</a></li>
-                                    </ul>
+
                                 </li>
                             </ul>
                         </li>
@@ -111,12 +102,9 @@
                                 <li><a href="blog-single.html">Blog Single</a></li>
                             </ul>
                         </li>-->
-                        <li class="menu-has-children">
+                        <li>
                             @Html.ActionLink("About us", "About", "Home")
-                            <ul>
-                                <li><a href="blog-home.html">Blog Home</a></li>
-                                <li><a href="blog-single.html">Blog Single</a></li>
-                            </ul>
+
                         </li>
                     </ul>
                 </nav><!-- #nav-menu-container -->
@@ -226,5 +214,6 @@
     <script src="/Content/js/owl.carousel.min.js"></script>
     <script src="/Content/js/mail-script.js"></script>
     <script src="/Content/js/main.js"></script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>

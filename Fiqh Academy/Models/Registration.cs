@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Fiqh_Academy.Models
 {
@@ -27,6 +23,7 @@ namespace Fiqh_Academy.Models
         [Required]
 
         [Display(Name ="Mobile Number")]
+        [Phone]
         public string Number { get; set; }
         [Required]
         [Display(Name ="Select Course")]
